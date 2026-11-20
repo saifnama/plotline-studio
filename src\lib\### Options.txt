@@ -1,0 +1,37 @@
+### Options
+
+The Markmap options has a type of [IMarkmapOptions](https://markmap.js.org/api/interfaces/markmap-view.IMarkmapOptions.html). It can be passed to Markmap.create upon Markmap creation or mm.setOptions afterwards.
+
+```
+options
+```
+
+
+```
+Markmap.create
+```
+
+
+```
+mm.setOptions
+```
+
+It is a low-level object with functions, making it difficult to serialize, so it is not portable.
+
+```
+function
+```
+
+So, I recommend using [JSON options](https://markmap.js.org/docs/json-options) when possible. The JSON options represent a subset of the low-level options as a tradeoff for portability.
+It can be easily converted into the low-level options:
+
+```
+import { deriveOptions } from 'markmap-view'; const options = deriveOptions(jsonOptions);
+```
+
+
+```
+import { deriveOptions } from 'markmap-view'; const options = deriveOptions(jsonOptions);
+```
+
+[gera2ld](https://github.com/gera2ld)

@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Markmap Dark Mode Overrides */
+.dark svg.markmap text {
+  fill: #f4f4f5 !important;
+  /* text-zinc-100 */
+}
+
+.dark svg.markmap foreignObject div {
+  color: #f4f4f5 !important;
+  /* text-zinc-100 */
+}
+
+.dark svg.markmap path.markmap-link {
+  /* Dimmer stroke for uncolored branches if any */
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.dark svg.markmap circle.markmap-node {
+  stroke: #52525b !important;
+  /* zinc-600 */
+  fill: #18181b !important;
+  /* zinc-900 */
+}
