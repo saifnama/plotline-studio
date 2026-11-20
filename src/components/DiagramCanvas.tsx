@@ -122,6 +122,7 @@ const DiagramCanvas = forwardRef<DiagramCanvasHandle, DiagramCanvasProps>(({
     try {
       mermaid.initialize({
         startOnLoad: false,
+        suppressErrorRendering: true,
         theme: autoColor ? (isDarkMode ? 'dark' : 'default') : 'neutral',
         securityLevel: 'loose',
         fontFamily: 'Inter, sans-serif',
@@ -142,6 +143,8 @@ const DiagramCanvas = forwardRef<DiagramCanvasHandle, DiagramCanvasProps>(({
   const renderDiagram = async () => {
     if (!containerRef.current || !code.trim()) {
       if (containerRef.current) containerRef.current.innerHTML = '';
+      svgRef.current = null;
+      setError(null);
       return;
     }
 
@@ -177,6 +180,7 @@ const DiagramCanvas = forwardRef<DiagramCanvasHandle, DiagramCanvasProps>(({
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
       }
+      svgRef.current = null;
     }
   };
 
